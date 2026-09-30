@@ -19,3 +19,6 @@ SunRise is a guest house (гостьовий дім) in Kamianets-Podilskyi, Ukr
 
 ## Notes
 The page explicitly flags several details as unverified: room categories/capacity/pricing, whether Wi-Fi is free or covers all rooms, breakfast format (included vs. paid) and menu, parking cost/location/capacity, specific excursion routes/duration/language/pricing, email/social media, and business hours. Photos on the page are marked as illustrative, not actual property photos.
+
+## Forms
+Connected to HotelOS (`kp-sunrise`): `stay-request` (after Проживання). No room-type select, since categories are not confirmed.

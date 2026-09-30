@@ -22,13 +22,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
     :root{--cream:#faf3e6;--beige:#f1e4c8;--white:#fffcf5;--sun:#d99a3f;--orange:#c1712f;--green:#6c7a4f;--graphite:#332e28;--line:rgba(51,46,40,.15);--muted:#6e6656;--serif:'Fraunces',Georgia,serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--max:1100px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--graphite);font-family:var(--sans);line-height:1.63}
-    img{display:block;width:100%;height:100%;object-fit:cover}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+    img{display:block;width:100%;height:100%;object-fit:cover}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}
     .wrap{width:min(var(--max),calc(100% - 42px));margin:auto}.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
     .section{padding:94px 0}.section h2{font:600 clamp(2.1rem,4.6vw,3.7rem)/1.08 var(--serif);letter-spacing:-.02em;margin:.25em 0}
     .lead{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);max-width:660px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;padding:0 23px;border:1px solid var(--graphite);border-radius:999px;font-weight:700;font-size:.83rem;background:transparent;cursor:pointer}
     .btn.primary{background:var(--sun);border-color:var(--sun);color:var(--graphite)}.btn.green{background:var(--green);border-color:var(--green);color:#fff}
-    .btn:hover{transform:translateY(-2px)}.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+    .btn:hover{transform:translateY(-2px)}.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
     .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}.skip{position:absolute;left:-999px}.skip:focus{left:15px;top:10px;background:#fff;padding:10px;z-index:100}
     header{position:sticky;top:0;z-index:30;background:rgba(250,243,230,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.header-in{height:74px;display:flex;align-items:center;gap:20px}
     .brand{margin-right:auto;line-height:1}.brand strong{display:block;font:600 1.15rem var(--serif);letter-spacing:.02em}.brand small{display:block;margin-top:5px;color:var(--muted);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase}
@@ -64,6 +64,11 @@
     .gallery-note{font-size:.76rem;color:var(--muted);margin-top:16px}
     .reviews{background:var(--white)}.reviews-box{margin-top:20px;padding:24px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:.9rem;max-width:640px}
     .booking{background:var(--beige)}
+    .request{background:var(--cream)}.request-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.request-phone{display:inline-block;margin-top:14px;font:600 1.6rem var(--serif);color:var(--orange)}
+    .request-form{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;padding:32px;background:#fff;border-radius:14px;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(51,46,40,.35)}.field{display:grid;gap:6px;align-content:start;font-size:.8rem;font-weight:700}.field.full{grid-column:1/-1}.field small{font-weight:500;color:var(--muted)}
+    .field input,.field select,.field textarea{width:100%;min-height:48px;padding:11px 15px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--graphite);font-size:1rem;font-weight:400}.field textarea{min-height:104px;resize:vertical}.field [aria-invalid=true]{border-color:#a4441c;box-shadow:inset 0 0 0 1px #a4441c}
+    [data-error-for]{font-weight:600;color:#a4441c}[data-error-for]:empty{display:none}.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.request-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.request-note{flex:1;min-width:200px;margin:0;font-size:.76rem;color:var(--muted)}.btn[disabled]{opacity:.6;cursor:wait;transform:none}
+    [data-status]{grid-column:1/-1;margin:0;padding:14px 16px;border-left:4px solid var(--green);border-radius:0 10px 10px 0;background:var(--cream);font-size:.9rem}[data-status]:empty{display:none}[data-status][data-state=error]{border-color:#a4441c}[data-status] a{font-weight:700;text-decoration:underline}
     .final{min-height:440px;position:relative;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}.final img{position:absolute;inset:0;height:100%;object-fit:cover}
     .final:after{content:"";position:absolute;inset:0;background:rgba(51,46,40,.66)}.final>div{position:relative;z-index:1;padding:60px 20px;max-width:680px}
     .final h2{font:600 clamp(2.1rem,5.2vw,3.7rem)/1.1 var(--serif);letter-spacing:-.01em;margin:.2em 0}.final .actions{justify-content:center}.final small{display:block;margin-top:22px;letter-spacing:.12em;text-transform:uppercase;color:#efe0bd}
@@ -77,10 +82,10 @@
     .final{background:linear-gradient(rgba(51,46,40,.66),rgba(51,46,40,.66)),url('images/hero.jpg') center/cover}
     @supports(background-attachment:fixed){@media(min-width:1001px) and (prefers-reduced-motion:no-preference){.final{background-attachment:fixed}}}
     @media(max-width:900px){.nav,.header-in>.phone,.header-in>.btn{display:none}
-      .facts-grid{grid-template-columns:1fr 1fr}.about-grid,.stay-grid,.explore-grid,.parking-grid,.location-grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.feature-media{height:420px}.feature.breakfast .feature-media{order:0}
+      .facts-grid{grid-template-columns:1fr 1fr}.about-grid,.stay-grid,.explore-grid,.parking-grid,.location-grid,.request-grid{grid-template-columns:1fr}.request-grid{gap:32px}.feature{grid-template-columns:1fr}.feature-media{height:420px}.feature.breakfast .feature-media{order:0}
       .morning-grid,.scenario-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){body{padding-bottom:64px}.wrap{width:calc(100% - 26px)}.section{padding:62px 0}.hero{min-height:640px}.hero-content{padding:56px 0 46px}
-      .facts-grid{grid-template-columns:1fr 1fr}.fact{padding:16px 8px}.morning-grid,.scenario-grid{grid-template-columns:1fr}
+      .facts-grid{grid-template-columns:1fr 1fr}.fact{padding:16px 8px}.morning-grid,.scenario-grid,.request-form{grid-template-columns:1fr}.request-form{padding:22px 16px}
       .gallery{grid-template-columns:1fr;grid-template-rows:auto}.gallery figure,.gallery figure:first-child{grid-column:auto;height:210px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:7px}
       .mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;background:#fff;padding:9px;gap:8px;z-index:40;border-top:1px solid var(--line)}
       .mobile-sticky a{text-align:center;padding:11px;font-weight:700}.mobile-sticky a:first-child{background:var(--sun);color:var(--graphite)}.mobile-sticky a:last-child{background:var(--beige);color:var(--graphite)}}
@@ -90,12 +95,13 @@
 </head>
 <body>
   <a class="skip" href="#top">До основного вмісту</a>
-  <header><div class="wrap header-in"><a class="brand" href="#top"><strong>SunRise</strong><small>Гостьовий дім · Кам’янець-Подільський</small></a><nav id="nav" class="nav" aria-label="Основна навігація"><a href="#about">Про SunRise</a><a href="#stay">Проживання</a><a href="#breakfast">Сніданки</a><a href="#explore">Екскурсії</a><a href="#parking">Паркування</a><a href="#contacts">Контакти</a></nav><a class="phone" href="tel:+380679169154">+38 067 916 91 54</a><a class="btn primary" href="#booking">Перевірити проживання</a></div></header>
+  <header><div class="wrap header-in"><a class="brand" href="#top"><strong>SunRise</strong><small>Гостьовий дім · Кам’янець-Подільський</small></a><nav id="nav" class="nav" aria-label="Основна навігація"><a href="#about">Про SunRise</a><a href="#stay">Проживання</a><a href="#breakfast">Сніданки</a><a href="#explore">Екскурсії</a><a href="#parking">Паркування</a><a href="#contacts">Контакти</a></nav><a class="phone" href="tel:+380679169154">+38 067 916 91 54</a><a class="btn primary" href="#stay-request">Перевірити проживання</a></div></header>
   <main id="top">
     <section class="hero"><div class="hero-media"><video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg"><source src="hero-bg.mp4" type="video/mp4"></video></div><div class="wrap hero-content"><span class="eyebrow">Гостьовий дім · Кам’янець-Подільський</span><h1>SunRise</h1><h2>Почніть день у Кам’янці з SunRise</h2><p>Проживання, сніданки, Wi-Fi, автостоянка та екскурсії.</p><div class="actions"><a class="btn primary" href="#stay">Переглянути проживання</a><a class="btn" style="border-color:#fff;color:#fff" href="tel:+380679169154">Зателефонувати</a></div><div class="hero-address"><span>вул. Бусигіна, 3</span><a href="https://www.google.com/maps/search/?api=1&query=SunRise,+вул.+Бусигіна+3,+Кам’янець-Подільський" target="_blank" rel="noopener">Показати на карті →</a></div></div><span class="image-note">Ілюстративне зображення</span></section>
     <section class="facts"><div class="wrap facts-grid"><div class="fact"><b>Проживання</b><span>Гостьовий дім</span></div><div class="fact"><b>Wi-Fi</b><span>За даними джерела</span></div><div class="fact"><b>Сніданки</b><span>За даними джерела</span></div><div class="fact"><b>Автостоянка</b><span>За даними джерела</span></div><div class="fact"><b>Екскурсії</b><span>За даними джерела</span></div></div></section>
-    <section class="section" id="about"><div class="wrap about-grid"><div class="reveal"><span class="eyebrow">Про SunRise</span><h2>Простий старт для вашої подорожі</h2><p class="lead">SunRise, гостьовий дім у Кам’янці-Подільському. Джерельний опис підтверджує готельні послуги, екскурсії, Wi-Fi, сніданки та автостоянку. Простий сценарій: заселитися, поснідати, вирушити на екскурсію.</p><a class="btn primary" href="#stay">Запланувати проживання</a></div><div class="stay-media reveal"><img src="images/hero.jpg" alt="SunRise, ілюстративне зображення"></div></div></section>
+    <section class="section" id="about"><div class="wrap about-grid"><div class="reveal"><span class="eyebrow">Про SunRise</span><h2>Простий старт для вашої подорожі</h2><p class="lead">SunRise, гостьовий дім у Кам’янці-Подільському. Джерельний опис підтверджує готельні послуги, екскурсії, Wi-Fi, сніданки та автостоянку. Простий сценарій: заселитися, поснідати, вирушити на екскурсію.</p><a class="btn primary" href="#stay-request">Запланувати проживання</a></div><div class="stay-media reveal"><img src="images/hero.jpg" alt="SunRise, ілюстративне зображення"></div></div></section>
     <section class="section stay" id="stay"><div class="wrap stay-grid"><div class="stay-media reveal"><img src="images/room.jpg" alt="SunRise, ілюстративне зображення проживання"></div><div class="reveal"><span class="eyebrow">Проживання</span><h2>Зупиніться у SunRise</h2><p class="lead">Точна кількість номерів, категорії, місткість і ціни наразі не підтверджені.</p><div class="stay-note">Деталі номерів, категорії, ліжка, санвузол та зручності, уточнюйте телефоном перед бронюванням.</div></div></div></section>
+    <section class="section request" id="stay-request"><div class="wrap request-grid"><div class="reveal"><span class="eyebrow">Запит на проживання</span><h2>Залиште номер, ми передзвонимо</h2><p class="lead">Вкажіть телефон і, за бажанням, дати поїздки. Ми зателефонуємо, щоб перевірити вільні місця й відповісти на питання про сніданок та екскурсії.</p><a class="request-phone" href="tel:+380679169154">+38 067 916 91 54</a></div><form class="request-form reveal" data-hotelos data-form-name="Запит на проживання" novalidate><label class="field full">Телефон <small>обов’язково, щоб ми могли передзвонити</small><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required><span data-error-for="phone"></span></label><label class="field">Ім’я<input name="name" type="text" autocomplete="name" maxlength="200"></label><label class="field">Гостей<input name="guests" type="number" min="1" max="50" inputmode="numeric"></label><label class="field">Дата заїзду<input name="checkIn" type="date"></label><label class="field">Дата виїзду<input name="checkOut" type="date"><span data-error-for="checkOut"></span></label><label class="field full">Побажання<textarea name="message" maxlength="5000"></textarea></label><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><div class="request-foot"><button class="btn primary" type="submit">Надіслати запит</button><p class="request-note">Номер використаємо лише для відповіді на цей запит.</p></div><p data-status role="status" aria-live="polite"></p></form></div></section>
     <section class="feature wifi" id="wifi"><div class="feature-copy"><div class="reveal"><span class="eyebrow">На зв’язку</span><h2>Wi-Fi</h2><p class="lead">Джерело прямо вказує на наявність Wi-Fi. До окремого підтвердження ми не називаємо його «безкоштовним» і не заявляємо покриття в усіх номерах.</p></div></div><div class="feature-media reveal"><img src="images/wifi.jpg" alt="Wi-Fi у номері, ілюстративне зображення"></div></section>
     <section class="feature breakfast" id="breakfast"><div class="feature-media reveal"><img src="images/breakfast.jpg" alt="Сніданок, ілюстративне зображення"></div><div class="feature-copy"><div class="reveal"><span class="eyebrow">Сніданок</span><h2>Почніть день зі сніданку</h2><p class="lead">Джерело підтверджує сніданки, один із головних диференціаторів SunRise. Формат (included чи paid), меню, години подачі та вегетаріанські опції наразі не підтверджені.</p><a class="btn primary" href="#booking">Уточнити сніданок</a></div></div></section>
     <section class="section explore" id="explore"><div class="wrap explore-grid"><div class="reveal"><span class="eyebrow">Екскурсії</span><h2>Відкривайте Кам’янець</h2><p class="lead">Джерело підтверджує проведення екскурсій, сильний диференціатор для гостьового дому. Конкретні маршрути, тривалість, мова гіда та ціни наразі не підтверджені. Ми не вигадуємо «тур Старим містом» чи «екскурсію до фортеці» без даних.</p><a class="btn green" href="#booking">Запитати екскурсію</a></div><div class="stay-media reveal" style="border-radius:14px;overflow:hidden;min-height:300px"><img src="images/excursion.jpg" alt="Екскурсія, ілюстративне зображення"></div></div></section>
@@ -105,10 +111,10 @@
     <section class="section location" id="contacts"><div class="wrap location-grid"><div class="map-card" style="padding:0;overflow:hidden"><iframe src="https://www.google.com/maps?q=SunRise%2C%20вул.%20Бусигіна%2C%203%2C%20Кам%E2%80%99янець-Подільський&output=embed" style="border:0;width:100%;height:100%;min-height:320px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Карта: SunRise, вул. Бусигіна, 3, Кам’янець-Подільський"></iframe></div><div class="contact-card"><span class="eyebrow">Контакти</span><h2 style="font:600 clamp(1.9rem,4vw,2.7rem)/1.05 var(--serif);margin:.2em 0">SunRise</h2><a class="big" href="tel:+380679169154">+38 067 916 91 54</a><dl><dt>Адреса</dt><dd>вул. Бусигіна, 3, Кам’янець-Подільський</dd><dt>Email / сайт / Instagram</dt><dd>Не підтверджено</dd><dt>Графік роботи</dt><dd>Актуальний статус наразі не підтверджено, зателефонуйте, щоб уточнити</dd></dl></div></div></section>
     <section class="section" id="gallery"><div class="wrap"><span class="eyebrow">Галерея</span><h2>Подивіться SunRise</h2><div class="gallery reveal-group"><figure class="reveal-item"><img src="images/room.jpg" alt="Ілюстративний номер" loading="lazy"></figure><figure class="reveal-item"><img src="images/breakfast.jpg" alt="Ілюстративний сніданок" loading="lazy"></figure><figure class="reveal-item"><img src="images/excursion.jpg" alt="Ілюстративна екскурсія" loading="lazy"></figure><figure class="reveal-item"><img src="images/parking.jpg" alt="Ілюстративна автостоянка" loading="lazy"></figure></div><p class="gallery-note">Зображення поки ілюстративні. Реальні фото номерів, сніданку та екскурсій буде додано після зйомки на місці.</p></div></section>
     <section class="section booking" id="booking"><div class="wrap"><span class="eyebrow">Контакти</span><h2>Зв'яжіться з нами</h2><p class="lead">Зателефонуйте, щоб уточнити наявність місць, сніданок та екскурсію.</p><div class="contact-card" style="max-width:420px;margin-top:24px;text-align:center"><a class="big" href="tel:+380679169154">+38 067 916 91 54</a><dl><dt>Адреса</dt><dd>вул. Бусигіна, 3, Кам’янець-Подільський</dd></dl><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=SunRise,+вул.+Бусигіна+3,+Кам’янець-Подільський" target="_blank" rel="noopener">Відкрити у Google Maps ↗</a></div></div></section>
-    <section class="final reveal"><div><span class="eyebrow" style="color:#f0d29b">Проживання · Сніданок · Екскурсії</span><h2>Новий день у Кам’янці починається тут</h2><p>Проживання, сніданок та екскурсії у гостьовому домі SunRise.</p><div class="actions"><a class="btn primary" href="#booking">Перевірити проживання</a><a class="btn" style="border-color:#fff;color:#fff" href="#explore">Запитати екскурсію</a></div><small>+38 067 916 91 54</small></div></section>
+    <section class="final reveal"><div><span class="eyebrow" style="color:#f0d29b">Проживання · Сніданок · Екскурсії</span><h2>Новий день у Кам’янці починається тут</h2><p>Проживання, сніданок та екскурсії у гостьовому домі SunRise.</p><div class="actions"><a class="btn primary" href="#stay-request">Перевірити проживання</a><a class="btn" style="border-color:#fff;color:#fff" href="#explore">Запитати екскурсію</a></div><small>+38 067 916 91 54</small></div></section>
   </main>
-  <footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><strong>SunRise</strong><small>Гостьовий дім · Кам’янець-Подільський</small></div><div class="footer-col"><b>Проживання</b><a href="#stay">Проживання</a><a href="#booking">Бронювання</a></div><div class="footer-col"><b>Ранок</b><a href="#breakfast">Сніданки</a><a href="#explore">Екскурсії</a></div><div class="footer-col"><b>Інформація</b><a href="#wifi">Wi-Fi</a><a href="#parking">Паркування</a><a href="#gallery">Галерея</a><a href="#contacts">Контакти</a></div></div><div class="footer-bottom"><span>вул. Бусигіна, 3 · Кам’янець-Подільський</span><span>+38 067 916 91 54</span></div></div></footer>
-  <div class="mobile-sticky"><a href="tel:+380679169154">Подзвонити</a><a href="#booking">Проживання</a></div>
+  <footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><strong>SunRise</strong><small>Гостьовий дім · Кам’янець-Подільський</small></div><div class="footer-col"><b>Проживання</b><a href="#stay">Проживання</a><a href="#stay-request">Бронювання</a></div><div class="footer-col"><b>Ранок</b><a href="#breakfast">Сніданки</a><a href="#explore">Екскурсії</a></div><div class="footer-col"><b>Інформація</b><a href="#wifi">Wi-Fi</a><a href="#parking">Паркування</a><a href="#gallery">Галерея</a><a href="#contacts">Контакти</a></div></div><div class="footer-bottom"><span>вул. Бусигіна, 3 · Кам’янець-Подільський</span><span>+38 067 916 91 54</span></div></div></footer>
+  <div class="mobile-sticky"><a href="tel:+380679169154">Подзвонити</a><a href="#stay-request">Проживання</a></div>
   <script>
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.1});
     document.querySelectorAll('.reveal,.reveal-group').forEach(el=>observer.observe(el));
@@ -123,5 +129,152 @@
       }
     }
   </script>
+<script type="module">
+// HotelOS site forms. Paste this whole block into the site's index.html as an inline module
+// script right before the closing body tag, and set the three constants below. Never put a
+// literal closing script tag inside this file: it would end the inline script early.
+// Contract (hotelos.webart.work/CRM.md → Submission data contract, firestore.rules):
+// - every form is <form data-hotelos data-form-name="…" novalidate> inside a <section id="{formId}">;
+//   the section id IS the formId (stable slug, e.g. stay-request, sauna-request) and the CRM
+//   links to SITE + '#' + formId, so the link scrolls to the start of that section;
+// - fields are matched by name: phone (required), name, email, message, checkIn, checkOut, guests,
+//   roomType, date, time, service; a [data-genders] box renders one select per guest (hostels);
+// - errors go to [data-error-for="<name>"], the result to [data-status]; `website` is a honeypot.
+const HOTEL_ID = 'kp-sunrise'; // Firestore hotels/{id}: 'kp-' + site folder name
+const SITE = 'https://sunrise.webart.work/'; // from the site's CNAME
+const PHONE = '+38 067 916 91 54'; // shown when sending fails
+
+const FIREBASE = {
+	apiKey: 'AIzaSyBeSB5EuC4BBSpmCGA3Pjk7dD_JV2SdcSQ',
+	authDomain: 'hotel-upwork.firebaseapp.com',
+	projectId: 'hotel-upwork',
+	appId: '1:40129364672:web:c9659550ebf0f1d8a36325',
+};
+const SDK = 'https://www.gstatic.com/firebasejs/12.19.0/';
+const TEXT_FIELDS = ['name', 'email', 'message', 'checkIn', 'checkOut', 'date', 'time', 'roomType', 'service'];
+const today = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+
+let db;
+async function firestore() {
+	if (db) return db;
+	// Loaded on first submit only, so the page itself stays light.
+	const [{ initializeApp }, lite] = await Promise.all([import(SDK + 'firebase-app.js'), import(SDK + 'firebase-firestore-lite.js')]);
+	db = { lite, store: lite.getFirestore(initializeApp(FIREBASE)) };
+	return db;
+}
+
+function setup(form) {
+	const formId = form.closest('section[id]')?.id;
+	if (!formId) return console.error('HotelOS form needs a parent <section id="formId">', form);
+	const field = (name) => form.elements.namedItem(name);
+	const statusEl = form.querySelector('[data-status]');
+	const submit = form.querySelector('[type=submit]');
+	const submitLabel = submit.textContent;
+	const gendersBox = form.querySelector('[data-genders]');
+
+	for (const name of ['checkIn', 'checkOut', 'date']) if (field(name)) field(name).min = today;
+	if (field('checkIn') && field('checkOut')) {
+		field('checkIn').addEventListener('change', () => {
+			const checkIn = field('checkIn').value;
+			field('checkOut').min = checkIn || today;
+			if (field('checkOut').value && field('checkOut').value <= checkIn) field('checkOut').value = '';
+		});
+	}
+
+	// Hostels: one gender select per guest, kept in sync with the guests count.
+	function renderGenders() {
+		if (!gendersBox) return;
+		const count = Math.min(Math.max(parseInt(field('guests')?.value, 10) || 1, 1), 20);
+		const current = [...gendersBox.querySelectorAll('select')].map((select) => select.value);
+		gendersBox.replaceChildren(
+			...Array.from({ length: count }, (_, i) => {
+				const label = document.createElement('label');
+				label.textContent = `Гість ${i + 1}`;
+				const select = document.createElement('select');
+				select.name = 'gender';
+				select.required = true;
+				select.innerHTML = '<option value="">Стать</option><option value="female">Жінка</option><option value="male">Чоловік</option>';
+				select.value = current[i] ?? '';
+				label.append(select);
+				return label;
+			}),
+		);
+	}
+	if (gendersBox) {
+		field('guests')?.addEventListener('input', renderGenders);
+		renderGenders();
+	}
+
+	function setError(name, text) {
+		const input = field(name);
+		if (input instanceof Element) input.setAttribute('aria-invalid', text ? 'true' : 'false');
+		const slot = form.querySelector(`[data-error-for="${name}"]`);
+		if (slot) slot.textContent = text;
+	}
+
+	function showStatus(state, html) {
+		statusEl.dataset.state = state;
+		statusEl.innerHTML = html;
+	}
+
+	form.addEventListener('submit', async (event) => {
+		event.preventDefault();
+		showStatus('', '');
+		const phone = field('phone').value.trim();
+		const digits = phone.replace(/\D/g, '');
+		setError('phone', digits.length < 9 || digits.length > 15 ? 'Вкажіть номер телефону, щоб ми могли передзвонити.' : '');
+		if (field('checkIn') && field('checkOut')) {
+			const { value: checkIn } = field('checkIn');
+			const { value: checkOut } = field('checkOut');
+			setError('checkOut', checkIn && checkOut && checkOut <= checkIn ? 'Дата виїзду має бути пізніше за дату заїзду.' : '');
+		}
+		const genderSelects = gendersBox ? [...gendersBox.querySelectorAll('select')] : [];
+		if (gendersBox) {
+			const missing = genderSelects.some((select) => !select.value);
+			for (const select of genderSelects) select.setAttribute('aria-invalid', missing && !select.value ? 'true' : 'false');
+			const slot = form.querySelector('[data-error-for="genders"]');
+			if (slot) slot.textContent = missing ? 'Вкажіть стать кожного гостя, щоб ми підібрали місця.' : '';
+		}
+		const invalid = form.querySelector('[aria-invalid=true]');
+		if (invalid) return invalid.focus();
+
+		const thanks = `Дякуємо! Ми зателефонуємо на ${phone.replace(/</g, '')} найближчим часом.`;
+		// Bots fill the hidden field: pretend success, send nothing.
+		if (field('website')?.value) {
+			form.reset();
+			renderGenders();
+			return showStatus('ok', thanks);
+		}
+
+		const lead = { phone, formId, formName: form.dataset.formName, site: SITE, hotelId: HOTEL_ID };
+		for (const name of TEXT_FIELDS) {
+			const value = field(name)?.value?.trim();
+			if (value) lead[name] = value;
+		}
+		const guests = parseInt(field('guests')?.value, 10);
+		if (guests >= 1 && guests <= 50) lead.guests = guests;
+		if (genderSelects.length) lead.genders = genderSelects.map((select) => select.value);
+
+		submit.disabled = true;
+		submit.textContent = 'Надсилаємо…';
+		try {
+			const { lite, store } = await firestore();
+			await lite.addDoc(lite.collection(store, 'submissions'), { ...lead, status: 'new', history: [], createdAt: lite.serverTimestamp() });
+			form.reset();
+			if (field('checkOut')) field('checkOut').min = today;
+			renderGenders();
+			showStatus('ok', thanks);
+		} catch (error) {
+			console.error(error);
+			showStatus('error', `Не вдалося надіслати запит. Зателефонуйте нам: <a href="tel:${PHONE.replace(/[^\d+]/g, '')}">${PHONE}</a>.`);
+		} finally {
+			submit.disabled = false;
+			submit.textContent = submitLabel;
+		}
+	});
+}
+
+document.querySelectorAll('form[data-hotelos]').forEach(setup);
+</script>
 </body>
 </html>
